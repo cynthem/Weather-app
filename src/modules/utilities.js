@@ -171,40 +171,40 @@ function weatherIcon(code) {
 
 function smallIcon(code) {
     if (code === '01d') {
-        return `<img src="https://openweathermap.org/img/wn/01d@2x.png">`
+        return `<img class="small-icon" src="https://openweathermap.org/img/wn/01d@2x.png">`
     }
     if (code === '01n') {
-        return `<img src="https://openweathermap.org/img/wn/01n@2x.png">`
+        return `<img class="small-icon" src="https://openweathermap.org/img/wn/01n@2x.png">`
     }
     if (code === '02d') {
-        return `<img src="https://openweathermap.org/img/wn/02d@2x.png">`
+        return `<img class="small-icon" src="https://openweathermap.org/img/wn/02d@2x.png">`
     }
     if (code === '02n') {
-        return `<img src="https://openweathermap.org/img/wn/02n@2x.png">`
+        return `<img class="small-icon" src="https://openweathermap.org/img/wn/02n@2x.png">`
     }
     if (code === '03d' || code === '03n') {
-        return `<img src="https://openweathermap.org/img/wn/03d@2x.png">`
+        return `<img class="small-icon" src="https://openweathermap.org/img/wn/03d@2x.png">`
     }
     if (code === '04d' || code === '04n') {
-        return `<img src="https://openweathermap.org/img/wn/04d@2x.png">`
+        return `<img class="small-icon" src="https://openweathermap.org/img/wn/04d@2x.png">`
     }
     if (code === '09d' || code === '09n') {
-        return `<img src="https://openweathermap.org/img/wn/09d@2x.png">`
+        return `<img class="small-icon" src="https://openweathermap.org/img/wn/09d@2x.png">`
     }
     if (code === '10d') {
-        return `<img src="https://openweathermap.org/img/wn/10d@2x.png">`
+        return `<img class="small-icon" src="https://openweathermap.org/img/wn/10d@2x.png">`
     }
     if (code === '10n') {
-        return `<img src="https://openweathermap.org/img/wn/10n@2x.png">`
+        return `<img class="small-icon" src="https://openweathermap.org/img/wn/10n@2x.png">`
     }
     if (code === '11d' || code === '11n') {
-        return `<img src="https://openweathermap.org/img/wn/11d@2x.png">`
+        return `<img class="small-icon" src="https://openweathermap.org/img/wn/11d@2x.png">`
     }
     if (code === '13d' || code === '13n') {
-        return `<img src="https://openweathermap.org/img/wn/13d@2x.png">`
+        return `<img class="small-icon" src="https://openweathermap.org/img/wn/13d@2x.png">`
     }
     if (code === '50d' || code === '50n') {
-        return `<img src="https://openweathermap.org/img/wn/50d@2x.png">`
+        return `<img class="small-icon" src="https://openweathermap.org/img/wn/50d@2x.png">`
     }
     return '';
 }
