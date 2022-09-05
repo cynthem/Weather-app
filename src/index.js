@@ -27,8 +27,9 @@ let currentCity = 'seattle';
 
 htmlBody.style.visibility = 'hidden';
 
+function renderTimeStyles(data) {
 
-// Search form
+}
 
 async function getWeatherData(unit, initialLoad = false) {
     try {
@@ -55,13 +56,14 @@ async function getWeatherData(unit, initialLoad = false) {
 
         const getForecastUrl = apiFunctions.forecastUrl(coordinates, unit);
         const weatherData = await apiFunctions.getForecast(getForecastUrl);
-
+        console.log(weatherData)
         weatherData.name = coordinates.name;
         weatherData.country = coordinates.country;
 
         searchError.style.display = 'none';
 
         renderWeather(weatherData, unit);
+        renderTimeStyles(weatherData);
 
         initialLoad = false;
 
@@ -75,6 +77,9 @@ async function getWeatherData(unit, initialLoad = false) {
 }
 
 getWeatherData(units, true);
+
+
+// Search form
 
 searchBtn.addEventListener('click', () => {getWeatherData(units)});
 
@@ -112,9 +117,7 @@ degreesCelsius.addEventListener('click', async () => {
 });
 
 
-// Forecast toggle
-
-//display hourly forecast listeners
+// Forecast toggles
 
 dailyBtn.addEventListener('click', () => {
     if (dailyBtn.classList.contains('selected-forecast-night')) {

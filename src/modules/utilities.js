@@ -8,6 +8,10 @@ function titleCase(words) {
     return eachWord.join(' ');
 }
 
+function checkTime(unix, offset) {
+    
+}
+
 function formatSunTimes(unix, offset) {
     const date = fromUnixTime(unix + offset).toUTCString();
     let hour = date.slice(17, 19);
@@ -31,7 +35,8 @@ function formatSunTimes(unix, offset) {
     if (hour < 10 && amPm === 'am') {
         hour = hour.slice(1, 2);
     }
-
+    console.log(hour - 1)
+    const tempinfo = `${hour}:${minute} ${amPm}`;
     return `${hour}:${minute} ${amPm}`;
 }
 
