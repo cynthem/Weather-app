@@ -256,7 +256,6 @@ body {
 .hourly-section-3 > div {
     display: flex;
     flex-direction: column;
-    gap: 2vh;
 }
 
 .day-1-title,
