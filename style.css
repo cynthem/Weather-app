@@ -105,6 +105,7 @@ body {
 
 .selected-degrees {
     font-weight: 900;
+    color: #ea6e4a;
 }
 
 
@@ -112,7 +113,7 @@ body {
 
 .center-grid {
     display: grid;
-    grid-template-rows: 0.75fr 0.75fr 0.5fr 160px 1fr 0.5fr;
+    grid-template-rows: 0.5fr 0.5fr 0.3fr 160px 0.75fr 1fr;
     justify-items: center;
 }
 
@@ -199,7 +200,7 @@ body {
 .bottom-grid {
     grid-column: span 3;
     display: grid;
-    grid-template-rows: 5vh, 1fr;
+    grid-template-rows: 6vh, 1fr;
     row-gap: 4vh;
 }
 
@@ -256,6 +257,7 @@ body {
 .hourly-section-3 > div {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .day-1-title,
@@ -290,6 +292,12 @@ body {
 .hour-23-title,
 .hour-24-title {
     font-size: 1.25vw;
+}
+
+.small-icon {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
 }
 
 .day-1-highlow,
@@ -335,7 +343,7 @@ body {
 .hour-22-temp,
 .hour-23-temp,
 .hour-24-temp {
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 
 .day-1-low,
