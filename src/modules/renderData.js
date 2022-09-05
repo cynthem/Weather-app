@@ -64,6 +64,12 @@ function renderCurrentWeather(data, units) {
     sunset.textContent = utilities.formatSunTimes(data.current.sunset, data.timezone_offset);
 }
 
+function renderBackground(data) {
+    const timeOfDay = utilities.checkTime(data.current.sunrise, data.current.sunset, data.current.dt, data.timezone_offset);
+
+    const background = document.querySelector('body');
+}
+
 function renderDailyForecast(data) {
     const dayOne = document.querySelector('.day-1-title');
     const dayOneIcon = document.querySelector('.day-1-icon');
@@ -301,6 +307,7 @@ function renderHourlyForecast(data) {
 
 export default function renderWeatherData(data, units) {
     renderCurrentWeather(data, units);
+    renderBackground(data);
     renderDailyForecast(data);
     renderHourlyForecast(data);
 }
