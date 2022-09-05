@@ -8,12 +8,29 @@ function titleCase(words) {
     return eachWord.join(' ');
 }
 
+function checkTime(sunriseUnix, sunsetUnix, currentUnix, offset) {
+    const sunrise = fromUnixTime(sunriseUnix + offset).toUTCString();
+    const sunriseHour = Number(sunrise.slice(17, 19));
+    const sunriseMinute = Number(sunrise.slice(20, 22)) / 60;
+
+    const sunset = fromUnixTime(sunsetUnix + offset).toUTCString();
+    const sunsetHour = Number(sunset.slice(17, 19));
+    const sunsetMinute = Number(sunset.slice(20, 22)) / 60;
+
+    const current = fromUnixTime(currentUnix + offset).toUTCString();
+    const currentHour = Number(current.slice(17, 19));
+    const currentMinute = Number(current.slice(20, 22)) / 60;
+}
+
 function formatSunTimes(unix, offset) {
     const date = fromUnixTime(unix + offset).toUTCString();
     let hour = date.slice(17, 19);
-    let minute = date.slice(20, 22);
+    const minute = date.slice(20, 22);
     let amPm;
-
+    const houring = Number(date.slice(17, 19));
+    const timing = Number(date.slice(20, 22)) / 60;
+    const together = houring + timing
+    console.log(together)
     if (hour > 11) {
         amPm = 'pm';
     } else {
@@ -32,8 +49,6 @@ function formatSunTimes(unix, offset) {
         hour = hour.slice(1, 2);
     }
 
-    const content = `${hour}:${minute} ${amPm}`;
-    const hourLast = `${hour}:${minute} ${amPm}`;
     return `${hour}:${minute} ${amPm}`;
 }
 
