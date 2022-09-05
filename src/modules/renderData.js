@@ -18,10 +18,10 @@ function renderCurrentWeather(data, units) {
     temperature.textContent = `${Math.round(data.current.temp)}°`;
 
     const highTemp = document.querySelector('.high');
-    highTemp.textContent = `${data.current.temp_max}°`;
+    highTemp.textContent = `${Math.round(data.daily[0].temp.max)}°`;
 
     const lowTemp = document.querySelector('.low');
-    lowTemp.textContent = `${data.current.temp_min}°`;
+    lowTemp.textContent = `${Math.round(data.daily[0].temp.min)}°`;
 
     const feelsLike = document.querySelector('.feel-details');
     feelsLike.textContent = `${Math.round(data.current.feels_like)}°`;
@@ -64,7 +64,7 @@ function renderCurrentWeather(data, units) {
     sunset.textContent = utilities.formatSunTimes(data.current.sunset, data.timezone_offset);
 }
 
-function renderDailyForecast(data, units) {
+function renderDailyForecast(data) {
     const dayOne = document.querySelector('.day-1-title');
     const dayOneIcon = document.querySelector('.day-1-icon');
     const dayOneHigh = document.querySelector('.day-1-high');
@@ -129,7 +129,7 @@ function renderDailyForecast(data, units) {
     daySevenLow.textContent = `${Math.round(data.daily[7].temp.min)}°`;
 }
 
-function renderHourlyForecast(data, units) {
+function renderHourlyForecast(data) {
     const hour1 = document.querySelector('.hour-1-title');
     const hour1Icon = document.querySelector('.hour-1-icon');
     const hour1Temp = document.querySelector('.hour-1-temp');
@@ -301,6 +301,6 @@ function renderHourlyForecast(data, units) {
 
 export default function renderWeatherData(data, units) {
     renderCurrentWeather(data, units);
-    renderDailyForecast(data, units);
-    renderHourlyForecast(data, units);
+    renderDailyForecast(data);
+    renderHourlyForecast(data);
 }
