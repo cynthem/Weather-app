@@ -8,12 +8,6 @@ function titleCase(words) {
     return eachWord.join(' ');
 }
 
-function checkTime(sunriseUnix, sunsetUnix, offset) {
-    const sunriseTiming = fromUnixTime(sunriseUnix + offset).toUTCString();
-    const sunsetTiming = fromUnixTime(sunsetUnix + offset).toUTCString();
-
-}
-
 function formatSunTimes(unix, offset) {
     const date = fromUnixTime(unix + offset).toUTCString();
     let hour = date.slice(17, 19);
@@ -219,7 +213,6 @@ function smallIcon(code) {
 
 export { 
     titleCase, 
-    checkTime,
     formatSunTimes, 
     formatDay,
     formatTime,
