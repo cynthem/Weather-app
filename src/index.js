@@ -1,5 +1,6 @@
 import * as apiFunctions from './modules/api.js';
 import renderWeather from './modules/renderData.js';
+import { checkTime } from './modules/utilities.js';
 
 const htmlBody = document.querySelector('body');
 // Search form

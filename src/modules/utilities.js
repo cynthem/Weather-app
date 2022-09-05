@@ -9,7 +9,7 @@ function titleCase(words) {
 }
 
 function checkTime(unix, offset) {
-    
+
 }
 
 function formatSunTimes(unix, offset) {
@@ -216,6 +216,7 @@ function smallIcon(code) {
 
 export { 
     titleCase, 
+    checkTime,
     formatSunTimes, 
     formatDay,
     formatTime,
