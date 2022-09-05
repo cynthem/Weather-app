@@ -1,0 +1,383 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: black;
+  font-family: Verdana, Tahoma, sans-serif;
+  padding: 4%;
+  cursor: default;
+}
+
+.daytime {
+    background-image: url('./resources/daySky.jpg');
+}
+
+.dusktime {
+    background-image: url('./resources/duskSky.jpg');
+}
+
+.nighttime {
+    background-image: url('./resources/nightSky.jpg');
+    color: #f5f5f5;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    height: 100%;
+}
+
+
+/* LEFT GRID */
+
+.left-grid {
+    display: grid;
+    grid-template-rows: 20% 80%;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-input,
+.search-btn {
+    font-size: 1vw;
+    padding: 0.3rem 0.5rem;
+    outline: none;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+.night-input {
+    border: 1px solid #f5f5f5;
+}
+
+.search-input {
+    border-right: none;
+    border-radius: 5px 0px 0px 5px;
+    width: 50%;
+}
+
+.night-btn {
+    border: 1px solid #f5f5f5;
+}
+
+.search-btn {
+    border-radius: 0px 5px 5px 0px;
+    border-left: none;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-size: 1vw;
+    display: none;
+}
+
+.temps-btn {
+    font-size: 1.3vw;
+    padding: 0.4rem 0.9rem 0.3rem 0.8rem;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.selected-degrees {
+    font-weight: 900;
+}
+
+
+/* CENTER GRID */
+
+.center-grid {
+    display: grid;
+    grid-template-rows: 0.75fr 0.75fr 0.5fr 160px 1fr 0.5fr;
+    justify-items: center;
+}
+
+.center-location {
+    font-size: 3vw;
+}
+
+.center-date {
+    font-size: 1vw;
+}
+
+.center-weather {
+    font-size: 2vw;
+}
+
+.center-image > img {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+.center-temp {
+    font-size: 4.5vw;
+}
+
+.center-highlow {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.2vw;
+}
+
+
+/* RIGHT GRID */
+
+.right-grid {
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    gap: 1.7vh;
+    justify-self: flex-end;
+}
+
+.right-grid > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1vw;
+}
+
+.feel-icon,
+.precip-icon,
+.rain-icon,
+.humid-icon,
+.wind-icon,
+.uv-icon,
+.sunrise-icon,
+.sunset-icon {
+    justify-self: flex-end;
+}
+
+.feel-title,
+.precip-title,
+.rain-title,
+.humid-title,
+.wind-title,
+.uv-title,
+.sunrise-title,
+.sunset-title {
+    font-size: 0.75vw;
+}
+
+.feel-details,
+.precip-details,
+.rain-details,
+.humid-details,
+.wind-details,
+.uv-details,
+.sunrise-details,
+.sunset-details {
+    font-size: 1.5vw;
+}
+
+
+/* BOTTOM GRID */
+
+.bottom-grid {
+    grid-column: span 3;
+    display: grid;
+    grid-template-rows: 5vh, 1fr;
+    row-gap: 4vh;
+}
+
+.bottom-toggle {
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+.daily-btn,
+.hourly-btn {
+    font-size: 1vw;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0.3vw 0.7vw 0.3vw;
+    cursor: pointer;
+}
+
+.selected-forecast-day {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.selected-forecast-night {
+    border: 1px solid #f5f5f5;
+    border-radius: 5px;
+}
+
+.hourly-arrows {
+    display: none;
+    cursor: pointer;
+}
+
+.hourly-open {
+    display: flex;
+    gap: 1vw;
+}
+
+/* Daily/Hourly containers */
+.daily-container {
+    display: none;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: space-between;
+}
+
+.selected-daily {
+    display: grid;
+}
+
+.daily-container > div,
+.hourly-section-1 > div,
+.hourly-section-2 > div,
+.hourly-section-3 > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.day-1-title,
+.day-2-title,
+.day-3-title,
+.day-4-title,
+.day-5-title,
+.day-6-title,
+.day-7-title,
+.hour-1-title,
+.hour-2-title,
+.hour-3-title,
+.hour-4-title,
+.hour-5-title,
+.hour-6-title,
+.hour-7-title,
+.hour-8-title,
+.hour-9-title,
+.hour-10-title,
+.hour-11-title,
+.hour-12-title,
+.hour-13-title,
+.hour-14-title,
+.hour-15-title,
+.hour-16-title,
+.hour-17-title,
+.hour-18-title,
+.hour-19-title,
+.hour-20-title,
+.hour-21-title,
+.hour-22-title,
+.hour-23-title,
+.hour-24-title {
+    font-size: 1.25vw;
+}
+
+.day-1-highlow,
+.day-2-highlow,
+.day-3-highlow,
+.day-4-highlow,
+.day-5-highlow,
+.day-6-highlow,
+.day-7-highlow {
+    display: flex;
+    gap: 5px;
+    align-items: baseline;
+}
+
+.day-1-high,
+.day-2-high,
+.day-3-high,
+.day-4-high,
+.day-5-high,
+.day-6-high,
+.day-7-high,
+.hour-1-temp,
+.hour-2-temp,
+.hour-3-temp,
+.hour-4-temp,
+.hour-5-temp,
+.hour-6-temp,
+.hour-7-temp,
+.hour-8-temp,
+.hour-9-temp,
+.hour-10-temp,
+.hour-11-temp,
+.hour-12-temp,
+.hour-13-temp,
+.hour-14-temp,
+.hour-15-temp,
+.hour-16-temp,
+.hour-17-temp,
+.hour-18-temp,
+.hour-19-temp,
+.hour-20-temp,
+.hour-21-temp,
+.hour-22-temp,
+.hour-23-temp,
+.hour-24-temp {
+    font-size: 2vw;
+}
+
+.day-1-low,
+.day-2-low,
+.day-3-low,
+.day-4-low,
+.day-5-low,
+.day-6-low,
+.day-7-low {
+    font-size: 1vw;
+}
+
+.hourly-container {
+    display: none;
+}
+
+.selected-hourly {
+    display: block;
+}
+
+.hourly-section-1,
+.hourly-section-2,
+.hourly-section-3 {
+    display: none;
+    grid-template-columns: repeat(8, 1fr);
+    justify-items: space-between;
+}
+
+.hourly-section-open {
+    display: grid;
+}
+
+
+/* NIGHT SETTINGS */
+
+/* .search-btn, .temps-btn, .daily-btn, .hourly-btn */
+.night-color {
+    color: #f5f5f5;
+}
+
+/* temps-btn */
+.night-border {
+    border: 1px solid #f5f5f5;
+}
