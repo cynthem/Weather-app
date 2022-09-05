@@ -24,10 +24,10 @@ function forecastUrl(coordinates, units) {
 async function getCoordinates(url) {
     const response = await fetch(url);
     const weatherData = await response.json();
-    const { coordinate } = weatherData;
-    coordinate.name = weatherData.name;
-    coordinate.country = weatherData.sys.country;
-    return coordinate;
+    const { coord } = weatherData;
+    coord.name = weatherData.name;
+    coord.country = weatherData.sys.country;
+    return coord;
 }
 
 async function getForecast(url) {
