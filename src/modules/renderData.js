@@ -79,6 +79,10 @@ function renderBackground(data) {
     searchIcon.classList.remove('night-color');
     searchIcon.classList.remove('night-btn');
 
+    const tempToggle = document.querySelector('.temps-btn');
+    tempToggle.classList.remove('night-color');
+    tempToggle.classList.remove('night-border');
+
     if (timeOfDay === 'day') {
         background.classList.add('daytime');
     } else if (timeOfDay === 'dusk') {
@@ -88,6 +92,8 @@ function renderBackground(data) {
         searchBar.classList.add('night-input');
         searchIcon.classList.add('night-color');
         searchIcon.classList.add('night-btn');
+        tempToggle.classList.add('night-color');
+        tempToggle.classList.add('night-border');
     } else {
         background.classList.add('daytime');
     }
