@@ -48,7 +48,7 @@ body {
     grid-template-rows: 20% 80%;
 }
 
-.search-form {
+.left-search {
     display: flex;
     flex-direction: column;
     gap: 5px;
