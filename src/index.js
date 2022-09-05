@@ -29,7 +29,7 @@ let currentCity = 'seattle';
 htmlBody.style.visibility = 'hidden';
 
 function renderTimeStyles(data) {
-
+    const timing = checkTime(data.current.sunrise, data.current.sunset, data.timezone_offset);
 }
 
 async function getWeatherData(unit, initialLoad = false) {

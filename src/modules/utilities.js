@@ -8,7 +8,7 @@ function titleCase(words) {
     return eachWord.join(' ');
 }
 
-function checkTime(unix, offset) {
+function checkTime(sunriseUnix, sunsetUnix, offset) {
 
 }
 
