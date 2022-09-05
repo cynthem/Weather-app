@@ -76,7 +76,10 @@ async function getWeatherData(unit, initialLoad = false) {
 
 getWeatherData(units, true);
 
-searchBtn.addEventListener('click', () => getWeatherData(units));
+searchBtn.addEventListener('submit', (e) => {
+    
+    getWeatherData(units);
+});
 
 searchInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {

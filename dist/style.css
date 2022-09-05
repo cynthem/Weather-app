@@ -59,7 +59,7 @@ body {
 }
 
 .search-input,
-.search-btn {
+.fa-magnifying-glass {
     font-size: 1vw;
     padding: 0.3rem 0.5rem;
     outline: none;
@@ -81,7 +81,7 @@ body {
     border: 1px solid #f5f5f5;
 }
 
-.search-btn {
+.fa-magnifying-glass {
     border-radius: 0px 5px 5px 0px;
     border-left: none;
     cursor: pointer;

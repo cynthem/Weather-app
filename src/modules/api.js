@@ -4,11 +4,7 @@ function searchFormData() {
     const city = input.value;
 
     if (city) {
-        return city
-            .replace(/(\s+$|^\s+)/g, '')
-            .replace(/(,\s+)/g, ',')
-            .replace(/(\s+,)/g, ',')
-            .replace(/\s+/g, '+');
+        return city.replace(/(\s+$|^\s+)/g, '').replace(/(,\s+)/g, ',').replace(/(\s+,)/g, ',').replace(/\s+/g, '+');
     }
     return '';
 }
