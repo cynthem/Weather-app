@@ -12,14 +12,38 @@ function checkTime(sunriseUnix, sunsetUnix, currentUnix, offset) {
     const sunrise = fromUnixTime(sunriseUnix + offset).toUTCString();
     const sunriseHour = Number(sunrise.slice(17, 19));
     const sunriseMinute = Number(sunrise.slice(20, 22)) / 60;
+    const sunriseTime = sunriseHour + sunriseMinute;
+    const sunriseMinus = sunriseTime - 1;
+    const sunrisePlus = sunriseTime + 1;
 
     const sunset = fromUnixTime(sunsetUnix + offset).toUTCString();
     const sunsetHour = Number(sunset.slice(17, 19));
     const sunsetMinute = Number(sunset.slice(20, 22)) / 60;
+    const sunsetTime = sunsetHour + sunsetMinute;
+    const sunsetMinus = sunsetTime - 1;
+    const sunsetPlus = sunsetTime + 1;
 
     const current = fromUnixTime(currentUnix + offset).toUTCString();
     const currentHour = Number(current.slice(17, 19));
     const currentMinute = Number(current.slice(20, 22)) / 60;
+    const currentTime = currentHour + currentMinute;
+
+    let timing;
+
+    if (
+        (currentTime >= sunriseMinus && currentTime <= sunrisePlus) ||
+        (currentTime >= sunsetMinus && currentTime <= sunsetPlus)
+        ) {
+        timing = 'dusk';
+    } else if (currentTime > sunrisePlus && currentTime < sunsetMinus) {
+        timing = 'day';
+    } else if (currentTime > sunsetPlus && currentTime < sunriseMinus) {
+        timing = 'night';
+    } else {
+        timing = 'day';
+    }
+
+    return timing;
 }
 
 function formatSunTimes(unix, offset) {
@@ -27,10 +51,7 @@ function formatSunTimes(unix, offset) {
     let hour = date.slice(17, 19);
     const minute = date.slice(20, 22);
     let amPm;
-    const houring = Number(date.slice(17, 19));
-    const timing = Number(date.slice(20, 22)) / 60;
-    const together = houring + timing
-    console.log(together)
+   
     if (hour > 11) {
         amPm = 'pm';
     } else {
@@ -228,6 +249,7 @@ function smallIcon(code) {
 
 export { 
     titleCase, 
+    checkTime,
     formatSunTimes, 
     formatDay,
     formatTime,
