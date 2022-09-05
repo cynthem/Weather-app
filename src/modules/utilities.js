@@ -1,4 +1,4 @@
-//import {fromUnixTime} from 'date-fns';
+import fromUnixTime from 'date-fns/fromUnixTime';
 
 function titleCase(words) {
     const eachWord = words.toLowerCase().split(' ');
