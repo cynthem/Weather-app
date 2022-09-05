@@ -68,6 +68,27 @@ function renderBackground(data) {
     const timeOfDay = utilities.checkTime(data.current.sunrise, data.current.sunset, data.current.dt, data.timezone_offset);
 
     const background = document.querySelector('body');
+    background.classList.remove('daytime');
+    background.classList.remove('dusktime');
+    background.classList.remove('nighttime');
+
+    const searchBar = document.querySelector('.search-input');
+    searchBar.classList.remove('night-input');
+
+    const searchIcon = document.querySelector('.fa-magnifying-glass');
+    searchIcon.classList.remove('night-color');
+    searchIcon.classList.remove('night-btn');
+
+    if (timeOfDay === 'day') {
+        background.classList.add('daytime');
+    } else if (timeOfDay === 'dusk') {
+        background.classList.add('dusktime');
+    } else if (timeOfDay === 'night') {
+        background.classList.add('nighttime');
+        searchBar.classList.add('night-input');
+    } else {
+        background.classList.add('daytime');
+    }
 }
 
 function renderDailyForecast(data) {
