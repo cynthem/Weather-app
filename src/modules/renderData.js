@@ -86,6 +86,8 @@ function renderBackground(data) {
     } else if (timeOfDay === 'night') {
         background.classList.add('nighttime');
         searchBar.classList.add('night-input');
+        searchIcon.classList.add('night-color');
+        searchIcon.classList.add('night-btn');
     } else {
         background.classList.add('daytime');
     }

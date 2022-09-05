@@ -62,7 +62,7 @@ function formatSunTimes(unix, offset) {
         hour -= 12;
     }
 
-    if (hour === '0') {
+    if (hour === '00') {
         hour = 12;
     }
 
@@ -100,7 +100,7 @@ function formatTime(unix, offset) {
     const date = fromUnixTime(unix + offset).toUTCString();
     let hour = date.slice(17, 19);
     let amPm;
-
+    
     if (hour > 11) {
         amPm = 'pm';
     } else {
@@ -111,7 +111,7 @@ function formatTime(unix, offset) {
         hour -= 12;
     }
 
-    if (hour === '0') {
+    if (hour === '00') {
         hour = 12;
     }
 
@@ -130,8 +130,7 @@ function formateDateTime(unix, offset) {
     let minute = date.slice(20, 22);
     let suffix;
     let amPm;
-
-
+  
     if (day < 10) {
         day = day.slice(1);
     }
@@ -156,7 +155,7 @@ function formateDateTime(unix, offset) {
         hour -= 12;
     }
 
-    if (hour === '0') {
+    if (hour === '00') {
         hour = 12;
     }
 
