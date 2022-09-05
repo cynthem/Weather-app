@@ -1,6 +1,5 @@
 import * as apiFunctions from './modules/api.js';
 import renderWeather from './modules/renderData.js';
-import { checkTime } from './modules/utilities.js';
 
 const htmlBody = document.querySelector('body');
 // Search form
@@ -27,10 +26,6 @@ let unitChanged = false;
 let currentCity = 'seattle';
 
 htmlBody.style.visibility = 'hidden';
-
-function renderTimeStyles(data) {
-    const timing = checkTime(data.current.sunrise, data.current.sunset, data.timezone_offset);
-}
 
 async function getWeatherData(unit, initialLoad = false) {
     try {
@@ -64,7 +59,6 @@ async function getWeatherData(unit, initialLoad = false) {
         searchError.style.display = 'none';
 
         renderWeather(weatherData, unit);
-        renderTimeStyles(weatherData);
 
         initialLoad = false;
 

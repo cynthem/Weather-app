@@ -9,6 +9,8 @@ function titleCase(words) {
 }
 
 function checkTime(sunriseUnix, sunsetUnix, offset) {
+    const sunriseTiming = fromUnixTime(sunriseUnix + offset).toUTCString();
+    const sunsetTiming = fromUnixTime(sunsetUnix + offset).toUTCString();
 
 }
 
@@ -35,8 +37,9 @@ function formatSunTimes(unix, offset) {
     if (hour < 10 && amPm === 'am') {
         hour = hour.slice(1, 2);
     }
-    console.log(hour - 1)
-    const tempinfo = `${hour}:${minute} ${amPm}`;
+
+    const content = `${hour}:${minute} ${amPm}`;
+    const hourLast = `${hour}:${minute} ${amPm}`;
     return `${hour}:${minute} ${amPm}`;
 }
 
