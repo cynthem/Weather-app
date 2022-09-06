@@ -14,16 +14,16 @@ function checkTime(sunriseUnix, sunsetUnix, currentUnix, offset) {
     const sunriseMinute = Number(sunrise.slice(20, 22)) / 60;
     const sunriseRounded = Math.round(sunriseMinute * 10) / 10;
     const sunriseTime = sunriseHour + sunriseRounded;
-    const sunriseMinus = sunriseTime - 1;
-    const sunrisePlus = sunriseTime + 1;
+    const sunriseMinus = sunriseTime - 0.5;
+    const sunrisePlus = sunriseTime + 0.5;
 
     const sunset = fromUnixTime(sunsetUnix + offset).toUTCString();
     const sunsetHour = Number(sunset.slice(17, 19));
     const sunsetMinute = Number(sunset.slice(20, 22)) / 60;
     const sunsetRounded = Math.round(sunsetMinute * 10) / 10;
     const sunsetTime = sunsetHour + sunsetRounded;
-    const sunsetMinus = sunsetTime - 1;
-    const sunsetPlus = sunsetTime + 1;
+    const sunsetMinus = sunsetTime - 0.5;
+    const sunsetPlus = sunsetTime + 0.5;
 
     const current = fromUnixTime(currentUnix + offset).toUTCString();
     const currentHour = Number(current.slice(17, 19));
