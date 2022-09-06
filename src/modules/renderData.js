@@ -1,7 +1,6 @@
 import * as utilities from './utilities.js';
 
 function renderCurrentWeather(data, units) {
-    
     const cityName = document.querySelector('.center-location');
     cityName.textContent = data.name;
 
@@ -66,7 +65,7 @@ function renderCurrentWeather(data, units) {
 
 function renderBackground(data) {
     const timeOfDay = utilities.checkTime(data.current.sunrise, data.current.sunset, data.current.dt, data.timezone_offset);
-    console.log(timeOfDay)
+
     const background = document.querySelector('body');
     background.classList.remove('daytime');
     background.classList.remove('dusktime');
