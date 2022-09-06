@@ -115,23 +115,23 @@ degreesCelsius.addEventListener('click', async () => {
 // Forecast toggles
 
 dailyBtn.addEventListener('click', () => {
-    if (dailyBtn.classList.contains('selected-forecast-night')) {
+    if (!dailyBtn.classList.contains('deselected')) {
         return;
-    } else {
-        dailyBtn.classList.add('selected-forecast-night');
-        hourlyBtn.classList.remove('selected-forecast-night');
+    } else if (dailyBtn.classList.contains('deselected')) {
+        dailyBtn.classList.remove('deselected');
+        hourlyBtn.classList.add('deselected');
         hourlyArrows.classList.remove('hourly-open');
-        dailyContainer.classList.add('selected-daily');
         hourlyContainer.classList.remove('selected-hourly');
+        dailyContainer.classList.add('selected-daily');
     }
 });
 
 hourlyBtn.addEventListener('click', () => {
-    if (hourlyBtn.classList.contains('selected-forecast-night')) {
+    if (!hourlyBtn.classList.contains('deselected')) {
         return;
-    } else {
-        hourlyBtn.classList.add('selected-forecast-night');
-        dailyBtn.classList.remove('selected-forecast-night');
+    } else if (hourlyBtn.classList.contains('deselected')) {
+        hourlyBtn.classList.remove('deselected');
+        dailyBtn.classList.add('deselected');
         hourlyArrows.classList.add('hourly-open');
         dailyContainer.classList.remove('selected-daily');
         hourlyContainer.classList.add('selected-hourly');
