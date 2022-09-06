@@ -114,7 +114,7 @@ body {
 
 .center-grid {
     display: grid;
-    grid-template-rows: 0.5fr 0.5fr 0.3fr 160px 0.75fr 1fr;
+    grid-template-rows: 0.6fr 0.5fr 0.3fr 160px 0.75fr 1fr;
     justify-items: center;
 }
 
