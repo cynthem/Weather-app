@@ -52,7 +52,7 @@ async function getWeatherData(unit, initialLoad = false) {
 
         const getForecastUrl = apiFunctions.forecastUrl(coordinates, unit);
         const weatherData = await apiFunctions.getForecast(getForecastUrl);
-        console.log(weatherData)
+
         weatherData.name = coordinates.name;
         weatherData.country = coordinates.country;
 
