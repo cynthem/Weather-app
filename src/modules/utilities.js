@@ -130,10 +130,36 @@ function formateDateTime(unix, offset) {
     let month = date.slice(8, 11);
     let day = date.slice(5, 7);
     let hour = date.slice(17, 19);
-    let minute = date.slice(20, 22);
+    const minute = date.slice(20, 22);
     let suffix;
     let amPm;
-  
+    
+    if (month === 'Jan') {
+        month = 'January';
+    } else if (month === 'Feb') {
+        month = 'February';
+    } else if (month === 'Mar') {
+        month = 'March';
+    } else if (month === 'Apr') {
+        month = 'April';
+    } else if (month === 'May') {
+        month = 'May';
+    } else if (month === 'Jun') {
+        month = 'June';
+    } else if (month === 'Jul') {
+        month = 'July';
+    } else if (month === 'Aug') {
+        month = 'August';
+    } else if (month === 'Sep') {
+        month = 'September';
+    } else if (month === 'Oct') {
+        month = 'October';
+    } else if (month === 'Nov') {
+        month = 'November';
+    } else if (month === 'Dec') {
+        month = 'December';
+    }
+
     if (day < 10) {
         day = day.slice(1);
     }
