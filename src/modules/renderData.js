@@ -84,9 +84,12 @@ function renderBackground(data) {
     tempToggle.classList.remove('night-border');
 
     const dailyForecast = document.querySelector('.daily-btn');
-    dailyForecast.classList.remove('')
+    dailyForecast.classList.remove('night-color');
+    dailyForecast.classList.remove('night-border');
 
     const hourlyForecast = document.querySelector('.hourly-btn');
+    hourlyForecast.classList.remove('night-color');
+    hourlyForecast.classList.remove('night-border');
 
     if (timeOfDay === 'day') {
         background.classList.add('daytime');
@@ -99,6 +102,10 @@ function renderBackground(data) {
         searchIcon.classList.add('night-btn');
         tempToggle.classList.add('night-color');
         tempToggle.classList.add('night-border');
+        dailyForecast.classList.add('night-color');
+        dailyForecast.classList.add('night-border');
+        hourlyForecast.classList.add('night-color');
+        hourlyForecast.classList.add('night-border');
     } else {
         background.classList.add('daytime');
     }
