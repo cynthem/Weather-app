@@ -12,21 +12,24 @@ function checkTime(sunriseUnix, sunsetUnix, currentUnix, offset) {
     const sunrise = fromUnixTime(sunriseUnix + offset).toUTCString();
     const sunriseHour = Number(sunrise.slice(17, 19));
     const sunriseMinute = Number(sunrise.slice(20, 22)) / 60;
-    const sunriseTime = sunriseHour + sunriseMinute;
+    const sunriseRounded = Math.round(sunriseMinute * 10) / 10;
+    const sunriseTime = sunriseHour + sunriseRounded;
     const sunriseMinus = sunriseTime - 1;
     const sunrisePlus = sunriseTime + 1;
 
     const sunset = fromUnixTime(sunsetUnix + offset).toUTCString();
     const sunsetHour = Number(sunset.slice(17, 19));
     const sunsetMinute = Number(sunset.slice(20, 22)) / 60;
-    const sunsetTime = sunsetHour + sunsetMinute;
+    const sunsetRounded = Math.round(sunsetMinute * 10) / 10;
+    const sunsetTime = sunsetHour + sunsetRounded;
     const sunsetMinus = sunsetTime - 1;
     const sunsetPlus = sunsetTime + 1;
 
     const current = fromUnixTime(currentUnix + offset).toUTCString();
     const currentHour = Number(current.slice(17, 19));
     const currentMinute = Number(current.slice(20, 22)) / 60;
-    const currentTime = currentHour + currentMinute;
+    const currentRounded = Math.round(currentMinute * 10) / 10;
+    const currentTime = currentHour + currentRounded;
 
     let timing;
 
@@ -37,7 +40,7 @@ function checkTime(sunriseUnix, sunsetUnix, currentUnix, offset) {
         timing = 'dusk';
     } else if (currentTime > sunrisePlus && currentTime < sunsetMinus) {
         timing = 'day';
-    } else if (currentTime > sunsetPlus && currentTime < sunriseMinus) {
+    } else if (currentTime > sunsetPlus || currentTime < sunriseMinus) {
         timing = 'night';
     } else {
         timing = 'day';
