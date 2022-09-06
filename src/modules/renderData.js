@@ -83,6 +83,11 @@ function renderBackground(data) {
     tempToggle.classList.remove('night-color');
     tempToggle.classList.remove('night-border');
 
+    const dailyForecast = document.querySelector('.daily-btn');
+    dailyForecast.classList.remove('')
+
+    const hourlyForecast = document.querySelector('.hourly-btn');
+
     if (timeOfDay === 'day') {
         background.classList.add('daytime');
     } else if (timeOfDay === 'dusk') {
