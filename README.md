@@ -1,7 +1,7 @@
 # Weather-app
 > A static page that uses the OpenWeather API to display the current and forecasted weather for any city in the world. Background and other styles change depending on the time of day - whether it's day, night, sunrise, or sunset. Uses Webpack and the date-fns library. This project was completed as part of The Odin Project's Full Stack Javascript curriculum.
 
-Live demo [_here_](https://doozles411.github.io/Weather-app/)
+Live demo [_here_](https://cynthem.github.io/Weather-app/)
 
 ## Room for Improvement
 To do:
